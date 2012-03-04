@@ -2,11 +2,11 @@
 // @name           readd_reader
 // @namespace      tag:gkatsev.com,2012-01-03:readd_reader
 // @description    Readd google reader link to google header
-// @include        http://*.google.com/*
-// @version        0.1
+// @include        *://*google.*/*
+// @version        0.5
 // ==/UserScript==
 
-(function(){
+function addReaderLinkToHeader(){
   var spanb2 = document.createElement('span')
     , spants = document.createElement('span')
     , anchor = document.createElement('a')
@@ -15,8 +15,6 @@
     , more = document.querySelector('#gbztm')
     , moreLI = more.parentNode
     , ol = more.parentNode.parentNode
-
-
 
   spanb2.classList.add('gbtb2')
   spants.classList.add('gbts')
@@ -43,4 +41,6 @@
     anchor.classList.add('gbz0l')
     anchor.classList.add('gbp1')
   }
-})()
+}
+
+window.addEventListener('load', addReaderLinkToHeader, false)
