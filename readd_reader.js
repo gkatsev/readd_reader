@@ -1,3 +1,10 @@
+// ==UserScript==
+// @name           readd_reader
+// @namespace      tag:gkatsev.com,2012-01-03:readd_reader
+// @description    Readd google reader link to google header
+// @include        http://*.google.com/*
+// ==/UserScript==
+
 var spanb2 = document.createElement('span')
   , spants = document.createElement('span')
   , anchor = document.createElement('a')
