@@ -71,7 +71,7 @@ function addReaderLinkToInbox(){
         '" target="' + atarget + '">Google Reader</a>.'
 }
 
-window.addEventListener('load', function(){
+unsafeWindow.addEventListener('DOMContentLoaded', function(){
   addReaderLinkToHeader()
   addReaderLinkToInbox()
 }, false)
