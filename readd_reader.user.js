@@ -56,8 +56,22 @@ function addReaderLinkToHeader(){
 }
 
 function addReaderLinkToInbox(){
-
+  var ifr = document.querySelector('#canvas_frame')
+    , ifrdoc = ifr.contentDocument || ifr.contentWindow.document
+    , ae = [].slice.call(ifrdoc.querySelectorAll('.e')).filter(function(e){
+      return /Google\+/.test(e.innerHTML)
+    })[0]
+    , aeparent = ae.parentNode
+    , ahref = '//www.google.com/reader/?hl=en&tab=wy'
+    , atext = 'Google Reader'
+    , aclass = 'e'
+    , atarget = '_blank'
+    aeparent.innerHTML = 'No new mail! Want to read updates from your ' + 
+        'favorite sites? Try <a class="' + aclass + '" href="' + ahref +
+        '" target="' + atarget + '">Google Reader</a>.'
 }
 
-window.addEventListener('load', addReaderLinkToHeader, false)
-window.addEventListener('load', addReaderLinkToInbox, false)
+window.addEventListener('load', function(){
+  addReaderLinkToHeader()
+  addReaderLinkToInbox()
+}, false)
