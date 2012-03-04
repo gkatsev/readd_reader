@@ -43,4 +43,9 @@ function addReaderLinkToHeader(){
   }
 }
 
+function addReaderLinkToInbox(){
+
+}
+
 window.addEventListener('load', addReaderLinkToHeader, false)
+window.addEventListener('load', addReaderLinkToInbox, false)
