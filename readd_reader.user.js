@@ -3,7 +3,7 @@
 // @namespace      tag:gkatsev.com,2012-01-03:readd_reader
 // @description    Readd google reader link to google header
 // @include        *://*google.*/*
-// @version        0.5
+// @version        0.9
 // ==/UserScript==
 
 function addReaderLinkToHeader(){
