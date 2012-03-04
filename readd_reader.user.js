@@ -13,8 +13,20 @@ function addReaderLinkToHeader(){
     , li = document.createElement('li')
     , reader = document.querySelector('#gb_32')
     , more = document.querySelector('#gbztm')
-    , moreLI = more.parentNode
-    , ol = more.parentNode.parentNode
+    , ifr
+    , ifrdoc
+    , moreLI
+    , ol
+
+  if(!more || !reader){
+    ifr = document.querySelector('#canvas_frame')
+    ifrdoc = ifr.contentDocument || ifr.contentWindow.document
+    reader = ifrdoc.querySelector('#gb_32')
+    more = ifrdoc.querySelector('#gbztm')
+  }
+
+  moreLI = more.parentNode
+  ol = more.parentNode.parentNode
 
   spanb2.classList.add('gbtb2')
   spants.classList.add('gbts')
